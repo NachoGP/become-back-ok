@@ -58,14 +58,30 @@ router.get('/relato/readstory/:id', (req, res) => {
 		res.json(rows)
 	})
 })
+//Ruta3.5: /api/relatos/readstory/id
+//Todos el número de relatos escritos por este autor
+//http://localhost:3000/api/readstory/:id/totals
+router.get('/relato/readstory/:id/totals', (req, res) => {
+	let idreltotal= req.params.id
+	modelRelato.mostrarRelatosporUsuario(idreltotal,(err, rows) => {
+		if (err) return console.log(err.message)
+		res.json(rows[0])
+	})
+})
 
 //Ruta4:
 //http://localhost:3000/api/propuestas/prop1rand
 router.get('/propuestas/prop1rand', (req, res) => {
 	modelProp.propuesta1((err, rows) => {
 		console.log(rows)
+		let objRes = {}
+		rows.forEach(row => {
+			for (var key in row[0]) {
+				objRes[key] = row[0][key];
+			}
+		});
 		// res.send("Ola ke ase")
-		res.json(rows)	
+		res.json(objRes)
 	})
 })
 

@@ -28,3 +28,13 @@ exports.connect = (done) => {
 exports.get = () => {
    return pool
 }
+
+// mysql://bed9bcd6c6ce65:2b658634@eu-cdbr-west-02.cleardb.net/heroku_9ce11891757ecf7?reconnect=true
+/**
+ * host: eu-cdbr-west-02.cleardb.net
+ * user: bed9bcd6c6ce65
+ * password: 2b658634
+ * database:  heroku_9ce11891757ecf7
+ * 
+ * 
+*/

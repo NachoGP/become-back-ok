@@ -1,0 +1,23 @@
+La conexión a Heroku se hará cuando este todo listo para producción:
+1) Se exportan/importan las tabla de la BBDD (import/export) 
+2) Se commitea y push de todo el sourcetree 
+
+Esta direccion de HEROKU es la que hemos de sustituir por localhost:3000 en todas las rutas
+
+https://becomeawriter.herokuapp.com/
+
+
+
+mysql://bed9bcd6c6ce65:2b658634@eu-cdbr-west-02.cleardb.net/heroku_9ce11891757ecf7?reconnect=true
+
+
+// mysql://bed9bcd6c6ce65:2b658634@eu-cdbr-west-02.cleardb.net/heroku_9ce11891757ecf7?reconnect=true
+/**
+ * host: eu-cdbr-west-02.cleardb.net
+ * user: bed9bcd6c6ce65
+ * password: 2b658634
+ * database:  heroku_9ce11891757ecf7
+ * 
+ * 
+*/
+

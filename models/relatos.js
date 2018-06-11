@@ -17,7 +17,6 @@ exports.mostrarRelatosOrdenados = (done)=>{
 
 }
 
-
 exports.todosRelatos = (done)=>{
    //lanzo la sentencia:
    //Todos los relatos por autor (id)
@@ -29,12 +28,21 @@ exports.todosRelatos = (done)=>{
 
 }
 
+exports.mostrarRelatosporUsuario = (id, done)=>{
+   //lanzo la sentencia:
+   //el relato que corresponde a un id
+   db.get().query('SELECT COUNT(*) as total FROM relatos WHERE usuario_id =?', [id], (err,rows)=>{
+
+      if(err) return done(err, null)
+      done(null, rows)
+   })
+}
 
 exports.mostrarRelato = (id, done)=>{
    //lanzo la sentencia:
    //el relato que corresponde a un id
    db.get().query('SELECT * from relatos where id=?',[id], (err,rows)=>{
-      
+
       if(err) return done(err, null)
       done(null, rows)
    })
