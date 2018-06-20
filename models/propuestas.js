@@ -9,11 +9,10 @@ exports.propuesta1 = (done) => {
       done(null, rows)
    })
 }
-
 exports.propuesta2 = (done)=>{
    //lanzo la sentencia:
    //http://localhost:3000/api/propuestas/prop2rand
-   db.get().query('SELECT completa FROM completas order by RAND() limit 1',(err,rows)=>{
+   db.get().query('SELECT completa,imagen FROM completas order by RAND() limit 1',(err,rows)=>{
 
       if(err) return done(err, null)
       done(null, rows)

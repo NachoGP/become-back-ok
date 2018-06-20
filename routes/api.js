@@ -24,7 +24,7 @@ router.get('/usuario/show/:id', (req, res) => {
 	let idUsuario = req.params.id
 	modelUsuario.show(idUsuario, (err, rows) => {
 		if (err) return console.log(err.message)
-		res.json(rows)
+	   res.json(rows)
 	})
 })
 
@@ -39,10 +39,20 @@ router.get('/relato/show/bydate', (req, res) => {
 	})
 })
 
-//Ruta3.3: /api/relatos/show/byid
-//http://localhost:3000/api/relato/show2/byid
-router.get('/relato/show2/byid', (req, res) => {
+//Ruta3.2: /api/relatos/show/byid
+//http://localhost:3000/api/relato/autor/2
+router.get('/relato/autor/:id', (req, res) => {
+	//recuperamos parametros de esa ruta: 
+	let identificador2= req.params.id
+	modelRelato.todosRelatosAutor(identificador2,(err, rows) => {
+		if (err) return console.log(err.message)
+		res.json(rows)
+	})
+})
 
+//Ruta3.3: /api/relatos/show/byid
+//http://localhost:3000/api/relato/show2/2
+router.get('/relato/show2/:id', (req, res) => {
 	//recuperamos parametros de esa ruta: 
 	modelRelato.todosRelatos((err, rows) => {
 		if (err) return console.log(err.message)
@@ -64,6 +74,27 @@ router.get('/relato/readstory/:id', (req, res) => {
 router.get('/relato/readstory/:id/totals', (req, res) => {
 	let idreltotal= req.params.id
 	modelRelato.mostrarRelatosporUsuario(idreltotal,(err, rows) => {
+		if (err) return console.log(err.message)
+		res.json(rows[0])
+	})
+})
+//creo(guardo) un relato escrito en writeboard.
+//http://localhost:3000/api/relato/readstory/create
+router.post('/relato/readstory/create', (req, res) => {
+console.log(req.body);
+
+	//recuperamos parametros de esa ruta: 
+	modelRelato.guardarRelato(
+		{
+			id: req.body.id, 
+			titulo: req.body.titulo,
+			categoria: req.body.categoria,
+			relato: req.body.relato,
+			fecha: req.body.fecha, 
+			usuario_id: req.body.usuario_id, 
+			propuesta:req.body.propuesta
+	   }, (err, rows) => {
+		
 		if (err) return console.log(err.message)
 		res.json(rows[0])
 	})
@@ -92,7 +123,8 @@ router.get('/propuestas/prop2rand', (req, res) => {
 	//recuperamos parametros de esa ruta: 
 	modelProp.propuesta2((err, rows) => {
 		if (err) return console.log(err.message)
-		res.json(rows)
+		res.json(rows[0])
 	})
 })
+
 module.exports = router

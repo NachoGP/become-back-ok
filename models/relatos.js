@@ -2,8 +2,6 @@
 
 let db = require('../db')
 
-
-
 exports.mostrarRelatosOrdenados = (done)=>{
    //lanzo la sentencia:
    //Todos los relatos ordenados con fechas descencientes. (sección "Ultimos Relatos" publicados)
@@ -11,16 +9,22 @@ exports.mostrarRelatosOrdenados = (done)=>{
 
       if(err) return done(err, null)
       done(null, rows)
-
    })
-
-
 }
 
+exports.todosRelatosAutor = (id, done)=>{
+   //lanzo la sentencia:
+   //Todos los relatos por autor (id)
+   db.get().query('SELECT * FROM relatos WHERE usuario_id =?',[id], (err,rows)=>{
+
+      if(err) return done(err, null)
+      done(null, rows)
+   })
+}
 exports.todosRelatos = (done)=>{
    //lanzo la sentencia:
    //Todos los relatos por autor (id)
-   db.get().query('SELECT r.id, r.titulo, r.categoria, r.relato, r.fecha, u.usuario FROM relatos r, usuarios u WHERE r.usuario_id = u.id AND r.usuario_id = 1',(err,rows)=>{
+   db.get().query('SELECT r.id, r.titulo, r.categoria, r.relato, r.fecha, u.usuario, FROM relatos r, usuarios u WHERE r.usuario_id = u.id AND r.usuario_id = 1',(err,rows)=>{
 
       if(err) return done(err, null)
       done(null, rows)
@@ -48,3 +52,14 @@ exports.mostrarRelato = (id, done)=>{
    })
 
 }
+
+exports.guardarRelato = ({id, titulo, categoria, relato, fecha, usuario_id, propuesta}, done)=>{
+  let consulta = 'INSERT INTO relatos (id, titulo, categoria, relato, fecha, usuario_id, propuesta) VALUES (?,?,?,?,?,?,?)'
+   db.get().query(consulta, [id, titulo, categoria, relato, fecha, usuario_id, propuesta], (err,rows) =>{
+
+      if(err) return done(err, null)
+      done(null, rows)
+   })
+
+}
+
