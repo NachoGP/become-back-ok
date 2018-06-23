@@ -3,7 +3,45 @@ var router = express.Router();
 //Me importo el modelo concreto:
 let modelUsuario = require('../models/usuarios')
 let modelRelato = require('../models/relatos')
+let modelRegistro = require('../models/registro')
 let modelProp = require('../models/propuestas')
+let modelTips = require('../models/tips')
+
+//Inserto un registro de usuario nuevo: Dar de alta usuario
+//http://localhost:3000/api/insert/newuser
+router.post('/insert/newuser', (req, res) => {
+	console.log(req.body);
+	
+		//recuperamos parametros de esa ruta: 
+		modelRegistro.guardarUsuario(
+			{
+				usuario: req.body.usuario,
+				password: req.body.password,
+				country: req.body.country,
+				city: req.body.city
+			}, (err, rows) => {
+			
+			if (err) return console.log(err.message)
+			res.json(rows[0])
+		})
+})
+
+//Ruta 0:
+// Login de Usuarios: 
+//http://localhost:3000/api/usuario/id
+
+router.post('/usuario/id', (req, res) => {
+	console.log(req.body);
+	modelRegistro.AccesoUsuario(
+		{
+			usuario: req.body.usuario,
+			password: req.body.password
+
+		},(err, rows) => {
+		if (err) return console.log(err.message)
+		res.json(rows)
+	})
+})
 
 //Ruta 1: 
 //http://localhost:3000/api/usuario/index
@@ -86,7 +124,6 @@ console.log(req.body);
 	//recuperamos parametros de esa ruta: 
 	modelRelato.guardarRelato(
 		{
-			id: req.body.id, 
 			titulo: req.body.titulo,
 			categoria: req.body.categoria,
 			relato: req.body.relato,
@@ -126,5 +163,21 @@ router.get('/propuestas/prop2rand', (req, res) => {
 		res.json(rows[0])
 	})
 })
+
+//Ruta6: 
+//http://localhost:3000/api/tips
+
+router.get('/tips', (req, res) => {
+
+	//recuperamos parametros de esa ruta: 
+	modelTips.tips((err, rows) => {
+		if (err) return console.log(err.message)
+		res.json(rows[0])
+	})
+})
+
+
+
+
 
 module.exports = router
