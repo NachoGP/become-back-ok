@@ -27,7 +27,7 @@ router.post('/insert/newuser', (req, res) => {
 })
 
 //Ruta 0:
-// Login de Usuarios: 
+// Login de Usuarios: en Postman: 
 //http://localhost:3000/api/usuario/id
 
 router.post('/usuario/id', (req, res) => {
@@ -39,7 +39,7 @@ router.post('/usuario/id', (req, res) => {
 
 		},(err, rows) => {
 		if (err) return console.log(err.message)
-		res.json(rows)
+		res.json(rows[0])
 	})
 })
 
