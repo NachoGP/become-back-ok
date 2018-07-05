@@ -26,3 +26,17 @@ exports.show = (id, done)=>{
 
 }
 
+
+
+//Nº total de Paises diferentes que son Becomer´s
+exports.ncountryTotal = (done)=>{
+   //lanzo la sentencia:
+   //Nº de relatos de la categoria Sin-Limite(1000) por autor (id)
+   db.get().query('SELECT COUNT(DISTINCT country) as totalpaises FROM usuarios',(err,rows)=>{
+ 
+      if(err) return done(err, null)
+      done(null, rows)
+   })
+ 
+ }
+

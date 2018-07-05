@@ -10,25 +10,12 @@ exports.guardarUsuario = ({id, usuario, password, country, city}, done)=>{
  
  }
 
- exports.AccesoUsuario = ( {usuario, password},done) => { 
-   let consulta = "SELECT * FROM usuarios WHERE usuario = ? && password = ? "
-    db.get().query(consulta, [usuario, password],(err,rows) =>{
+ exports.AccesoUsuario = (usuario,done) => { 
+   let consulta = "SELECT * FROM usuarios WHERE usuario = ?"
+    db.get().query(consulta, [usuario],(err,rows) =>{
 
-      // if (req.body.usuario === rows[0].usuario ) {
-      //   console.log("El usuario existe");
-      //     if (req.body.password === rows[0].password) {
-      //       console.log('El password es correcto');
-      //       // this.router.navigate(['/newprofile']);
-      //     } else {
-      //       console.log("Error en el login");
-      //     }
-      // } else {
-      //   console.log("El usuario no existe");
-      // }
-
-
-      // if(err) return done(err, null)
-      // done(null, rows)
+      if(err) return done(err, null)
+      done(null, rows)
 
    })
 }

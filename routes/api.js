@@ -23,26 +23,34 @@ router.post('/insert/newuser', (req, res) => {
 			
 			if (err) return console.log(err.message)
 			res.json(rows[0])
+
 		})
 })
 
 //Ruta 0:
 // Login de Usuarios: en Postman: 
-//http://localhost:3000/api/usuario/id
+//http://localhost:3000/api/usuario/login
 
-router.post('/usuario/id', (req, res) => {
-	console.log(req.body);
-	modelRegistro.AccesoUsuario(
-		{
-			usuario: req.body.usuario,
-			password: req.body.password
+router.post('/usuario/login', (req, res) => {
+	// console.log(req.body);
+	modelRegistro.AccesoUsuario(req.body.usuario, (err,result)=>{ 
+			// console.log(result.length);
+			
+			if ( result.length === 0 ) {
+				res.json({error:"falloUsuario"})
+			} else {
+          console.log(req.body.password)
 
-		},(err, rows) => {
-		if (err) return console.log(err.message)
-		res.json(rows[0])
-	})
+					if(result[0].password !== req.body.password){
+ 					res.json({error:"falloPassword"})
+					}else{
+						// console.log(result);
+						res.json(result[0])
+					}
+			}
+
+			})
 })
-
 //Ruta 1: 
 //http://localhost:3000/api/usuario/index
 
@@ -66,6 +74,54 @@ router.get('/usuario/show/:id', (req, res) => {
 	})
 })
 
+//Ruta 1: 
+//http://localhost:3000/api/usuario/paises
+
+router.get('/usuario/paises', (req, res) => {
+
+	modelUsuario.ncountryTotal((err, rows) => {
+		if (err) return console.log(err.message)
+		res.json(rows[0])
+	})
+})
+
+//Ruta 12: 
+//http://localhost:3000/api/totalcatilim
+
+router.get('/totalcatilim', (req, res) => {
+
+	modelRelato.nTotalrelatoscatilimitada((err, rows) => {
+		if (err) return console.log(err.message)
+		res.json(rows[0])
+	})
+})
+//Ruta 12: 
+//http://localhost:3000/api/totalcat5
+
+router.get('/totalcat5', (req, res) => {
+
+	modelRelato.nTotalrelatoscat5((err, rows) => {
+		if (err) return console.log(err.message)
+		res.json(rows[0])
+	})
+})
+
+//Ruta 12: 
+//http://localhost:3000/api/totalcat15
+
+router.get('/totalcat15', (req, res) => {
+
+	modelRelato.nTotalrelatoscat15((err, rows) => {
+		if (err) return console.log(err.message)
+		res.json(rows[0])
+	})
+})
+
+
+
+
+
+
 //Ruta3: /api/relatos/show/bydate
 //http://localhost:3000/api/relato/show/bydate
 router.get('/relato/show/bydate', (req, res) => {
@@ -76,6 +132,60 @@ router.get('/relato/show/bydate', (req, res) => {
 		res.json(rows)
 	})
 })
+
+//Ruta7.2: 
+//Nº de relatos de la categoria 5 min por autor
+//http://localhost:3000/api/cat5/1
+
+router.get('/cat5/:id', (req, res) => {
+	let cat5totaluser= req.params.id
+	//recuperamos parametros de esa ruta: 
+	modelRelato.relatoscat5Id(cat5totaluser,(err, rows) => {
+		if (err) return console.log(err.message)
+		res.json(rows[0])
+	})
+})
+
+//Ruta7.3: 
+//Nº de relatos de la categoria 5 min por autor
+//http://localhost:3000/api/cat15/1
+
+router.get('/cat15/:id', (req, res) => {
+	let cat15totaluser= req.params.id
+	//recuperamos parametros de esa ruta: 
+	modelRelato.relatoscat15Id(cat15totaluser,(err, rows) => {
+		if (err) return console.log(err.message)
+		res.json(rows[0])
+	})
+})
+
+//Ruta7.3: 
+//Nº de relatos de la categoria Sin limite min por autor
+//http://localhost:3000/api/catno/1
+
+router.get('/catno/:id', (req, res) => {
+	let catnototaluser= req.params.id
+	//recuperamos parametros de esa ruta: 
+	modelRelato.relatoscatnoId(catnototaluser,(err, rows) => {
+		if (err) return console.log(err.message)
+		res.json(rows[0])
+	})
+})
+
+
+//Ruta7.4: 
+//Nº TOTAL ABSOLUTO de relatos de todos los autores
+
+//http://localhost:3000/api/totalrelatos
+
+router.get('/totalrelatos', (req, res) => {
+
+	modelRelato.nrelatosTotal((err, rows) => {
+		if (err) return console.log(err.message)
+		res.json(rows[0])
+	})
+})
+
 
 //Ruta3.2: /api/relatos/show/byid
 //http://localhost:3000/api/relato/autor/2
@@ -173,6 +283,18 @@ router.get('/tips', (req, res) => {
 	modelTips.tips((err, rows) => {
 		if (err) return console.log(err.message)
 		res.json(rows[0])
+	})
+})
+
+//Ruta6: 
+//http://localhost:3000/api/delete/relato/13
+
+router.delete('/delete/relato/:id', (req, res) => {
+	let identificadorBorrado= req.params.id
+	//recuperamos parametros de esa ruta: 
+	modelRelato.borrarRelato(identificadorBorrado,(err, rows) => {
+		if (err) return console.log(err.message)
+		res.json(rows)
 	})
 })
 
