@@ -18,7 +18,9 @@ router.post('/insert/newuser', (req, res) => {
 				usuario: req.body.usuario,
 				password: req.body.password,
 				country: req.body.country,
-				city: req.body.city
+				city: req.body.city,
+				email: req.body.email
+
 			}, (err, rows) => {
 			
 			if (err) return console.log(err.message)
@@ -282,9 +284,22 @@ router.get('/tips', (req, res) => {
 	//recuperamos parametros de esa ruta: 
 	modelTips.tips((err, rows) => {
 		if (err) return console.log(err.message)
+		res.json(rows)
+	})
+})
+
+//Ruta6: 
+//http://localhost:3000/api/tip/1
+
+router.get('/tip-read/:id', (req, res) => {
+	let identificadorTip= req.params.id
+	//recuperamos parametros de esa ruta: 
+	modelTips.tipunico(identificadorTip,(err, rows) => {
+		if (err) return console.log(err.message)
 		res.json(rows[0])
 	})
 })
+
 
 //Ruta6: 
 //http://localhost:3000/api/delete/relato/13

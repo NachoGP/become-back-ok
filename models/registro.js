@@ -1,8 +1,8 @@
 let db = require('../db')
 
-exports.guardarUsuario = ({id, usuario, password, country, city}, done)=>{
-   let consulta = 'INSERT INTO usuarios (id, usuario, password, country, city) VALUES(?,?,?,?,?)'
-    db.get().query(consulta, [id, usuario, password, country, city], (err,rows) =>{
+exports.guardarUsuario = ({id, usuario, password, country, city, email}, done)=>{
+   let consulta = 'INSERT INTO usuarios (id, usuario, password, country, city, email) VALUES(?,?,?,?,?,?)'
+    db.get().query(consulta, [id, usuario, password, country, city, email], (err,rows) =>{
  
        if(err) return done(err, null)
        done(null, rows)
