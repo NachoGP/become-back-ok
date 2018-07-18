@@ -61,7 +61,7 @@ router.post('/usuario/login', (req, res) => {
 	modelRegistro.AccesoUsuario(req.body.usuario, (err,result)=>{ 
 			// console.log(result.length);
 			
-			if ( result.length === 0 ) {
+			if ( result.length == 0 ) {
 				res.json({error:"falloUsuario"})
 			} else {
           console.log(req.body.password)
@@ -86,7 +86,7 @@ router.post('/usuario/loginkids', (req, res) => {
 	modelRegistro.AccesoUsuarioKids(req.body.usuario, (err,result)=>{ 
 			// console.log(result.length);
 			
-			if ( result.length === 0 ) {
+			if ( result.length == 0 ) {
 				res.json({error:"falloUsuario"})
 			} else {
           console.log(req.body.password)
@@ -590,6 +590,7 @@ router.delete('/delete/relatokids/:id', (req, res) => {
 		res.json(rows)
 	})
 })
+
 
 
 module.exports = router;
