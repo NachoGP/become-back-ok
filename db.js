@@ -1,6 +1,6 @@
 //GESTOR Y MANEJADOR DE CONEXIONES A LA BBDD.
 
-//La variable 'pull' es la que contiene todas las conexiones a la bbdd
+//La variable 'pool' es la que contiene todas las conexiones a la bbdd
 
 //El metodo connect realiza la conexion a la bbdd y SOLO SE EJECUTA UNA UNICA VEZ. SE ejecuta en el fichero 'www'.
 
