@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors')
+//añado esta linea
+const exphbs = require ('express-handlebars');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -15,7 +17,16 @@ app.use(cors())
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+
+app.engine('.hbs', exphbs({
+  defaultLayout: 'main',
+  extname: '.hbs', 
+  partialDir: __dirname + '/views/partials'
+
+}))
+
+
+app.set('view engine', '.hbs');
 
 app.use(logger('dev'));
 app.use(express.json());

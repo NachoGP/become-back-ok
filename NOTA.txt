@@ -4,6 +4,8 @@ La conexión a Heroku se hará cuando este todo listo para producción:
 
 Esta direccion de HEROKU es la que hemos de sustituir por localhost:3000 en todas las rutas
 
+
+//Esta app se aliminó de los archivos.Estaba linkeada a GitHub
 https://becomeawriter.herokuapp.com/
 
 
