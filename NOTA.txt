@@ -23,3 +23,13 @@ mysql://bed9bcd6c6ce65:2b658634@eu-cdbr-west-02.cleardb.net/heroku_9ce11891757ec
  * 
 */
 
+
+La Nueva AD-ONS con MySql que me genera heroku: 
+ https://becomeawriter.herokuapp.com/
+
+mysql://b9c9457871ff97:010520ba@eu-cdbr-west-02.cleardb.net/heroku_cf0534b434c52eb?reconnect=true
+
+   host: eu-cdbr-west-02.cleardb.net
+ * user: b9c9457871ff97
+ * password: 010520ba
+ * database:  heroku_cf0534b434c52eb
