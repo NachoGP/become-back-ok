@@ -14,10 +14,11 @@ exports.connect = (done) => {
    pool = mysql.createPool({
 
 
-      host: eu-cdbr-west-02.cleardb.net,
-      user: b9c9457871ff97,
-      password: 010520ba,
-      database: heroku_cf0534b434c52eb
+      host: 10.27.16.48:54854,
+      user: 'becomeawriter_org_becomeawriter',
+      password: 'ciog2018',
+      database: 'becomeawriter_org_becomeawriter'
+
 
 
       // host: 'localhost',
