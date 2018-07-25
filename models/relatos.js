@@ -13,7 +13,7 @@ exports.mostrarRelatosOrdenados = (done)=>{
 
 exports.mostrarRelatosOrdenadosKids = (done)=>{
   //lanzo la sentencia:
-  //Todos los relatos ordenados con fechas descencientes. (sección "Ultimos Relatos" publicados)
+  //Todos los relatos Kids ordenados con fechas descencientes. (sección "Ultimos Relatos" publicados)
   db.get().query('SELECT r.id, r.titulo, r.categoria, r.relato, r.fecha, r.puntaje, u.usuario FROM relatoskids r, usuarioskids u WHERE r.usuariokids_id = u.id order by fecha DESC',(err,rows)=>{
 
      if(err) return done(err, null)

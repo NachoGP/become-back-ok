@@ -20,12 +20,6 @@ exports.propuesta1kids = (done) => {
 }
 
 
-
-
-
- 
-
-
 exports.propuesta2 = (done)=>{
    //lanzo la sentencia:
    //http://localhost:3000/api/propuestas/prop2rand
