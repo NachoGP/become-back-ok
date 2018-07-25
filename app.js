@@ -5,7 +5,6 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 // var cors = require('cors')
-//añado esta linea
 const exphbs = require ('express-handlebars');
 
 var indexRouter = require('./routes/index');
@@ -13,7 +12,7 @@ var usersRouter = require('./routes/users');
 let apiRouter = require('./routes/api');
 
 // app.use(cors())
-//CORS
+//'mi propio CORS: middleware'
 app.use((req, res, next) =>{
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
