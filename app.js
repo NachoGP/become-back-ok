@@ -12,9 +12,14 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 let apiRouter = require('./routes/api');
 
+app.use(cors(corsOptions))
+
 var app = express();
 
-app.use(cors())
+const corsOptions ={
+  origin:'http://becomeawriter.org',
+  optionsSuccessStatus: 200
+}
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -35,9 +40,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use ('/api',apiRouter);
+app.use('/', cors(corsOptions), indexRouter);
+app.use('/users', cors(corsOptions) , usersRouter);
+app.use ('/api', cors(corsOptions), apiRouter);
 
 
 // catch 404 and forward to error handler
