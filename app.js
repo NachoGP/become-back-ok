@@ -1,37 +1,20 @@
 var createError = require('http-errors');
 var express = require('express');
+var cors = require('cors');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var cors = require('cors')
+
 const exphbs = require ('express-handlebars');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 let apiRouter = require('./routes/api');
 
- app.use(cors())
-//'mi propio CORS: middleware'
-// app.use((req, res, next) =>{
-//   res.header('Access-Control-Allow-Origin', '*');
-//   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-
-//   if(req.method === 'OPTIONS'){
-//      res.header('Access-Control-Allow-Method', 'PUT, POST, PATCH, DELETE, GET');
-//      return res.status(200).json({});
-//   }
-//  next();
-// });
 
 var app = express();
 
-// const corsOptions ={
-//   method: ['POST', 'GET', 'SET'],
-//   origin:'*',
-//   credentials: true,
-//   optionsSuccessStatus: 200
-// }
-
+app.use(cors())
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 

@@ -4,7 +4,7 @@ let db = require('../db')
 exports.mostrarRelatosOrdenados = (done)=>{
    //lanzo la sentencia:
    //Todos los relatos ordenados con fechas descencientes. (sección "Ultimos Relatos" publicados)
-   db.get().query('SELECT r.id, r.titulo, r.categoria, r.relato, r.fecha, r.puntaje, u.usuario FROM relatos r, usuarios u WHERE r.usuario_id = u.id order by fecha DESC',(err,rows)=>{
+   db.get().query('SELECT r.id, r.titulo, r.categoria, r.relato, r.fecha, r.puntaje, u.usuario FROM relatos r, usuarios u WHERE r.usuario_id = u.id ORDER BY fecha DESC',(err,rows)=>{
 
       if(err) return done(err, null)
       done(null, rows)
@@ -14,7 +14,7 @@ exports.mostrarRelatosOrdenados = (done)=>{
 exports.mostrarRelatosOrdenadosKids = (done)=>{
   //lanzo la sentencia:
   //Todos los relatos Kids ordenados con fechas descencientes. (sección "Ultimos Relatos" publicados)
-  db.get().query('SELECT r.id, r.titulo, r.categoria, r.relato, r.fecha, r.puntaje, u.usuario FROM relatoskids r, usuarioskids u WHERE r.usuariokids_id = u.id order by fecha DESC',(err,rows)=>{
+  db.get().query('SELECT r.id, r.titulo, r.categoria, r.relato, r.fecha, r.puntaje, u.usuario FROM relatoskids r, usuarioskids u WHERE r.usuariokids_id = u.id ORDER BY fecha DESC',(err,rows)=>{
 
      if(err) return done(err, null)
      done(null, rows)
@@ -25,7 +25,7 @@ exports.mostrarRelatosOrdenadosKids = (done)=>{
 exports.todosRelatosAutor = (id, done)=>{
    //lanzo la sentencia:
    //Todos los relatos por autor (id)
-   db.get().query('SELECT * from relatos where usuario_id=? order by fecha DESC',[id], (err,rows)=>{
+   db.get().query('SELECT * from relatos where usuario_id=? ORDER BY fecha DESC',[id], (err,rows)=>{
    //SELECT * from relatos where usuario_id=? order by fecha DESC
       if(err) return done(err, null)
       done(null, rows)
@@ -36,7 +36,7 @@ exports.todosRelatosAutor = (id, done)=>{
 exports.todosRelatosAutorKids = (id, done)=>{
   //lanzo la sentencia:
   //Todos los relatos por autor kids (id)
-  db.get().query('SELECT * from relatoskids where usuariokids_id=? order by fecha DESC',[id], (err,rows)=>{
+  db.get().query('SELECT * from relatoskids where usuariokids_id=? ORDER BY fecha DESC',[id], (err,rows)=>{
   //SELECT * from relatos where usuario_id=? order by fecha DESC
      if(err) return done(err, null)
      done(null, rows)
@@ -46,7 +46,7 @@ exports.todosRelatosAutorKids = (id, done)=>{
 exports.todosRelatos = (done)=>{
    //lanzo la sentencia:
    //Todos los relatos por autor (id)
-   db.get().query('SELECT r.id, r.titulo, r.categoria, r.relato, r.fecha, r.propuesta, r.puntaje, u.usuario FROM relatos r, usuarios u WHERE r.usuario_id = u.id AND r.usuario_id = ? ORDER BY id DESC',(err,rows)=>{
+   db.get().query('SELECT r.id, r.titulo, r.categoria, r.relato, r.fecha, r.propuesta, r.puntaje, u.usuario FROM relatos r, usuarios u WHERE r.usuario_id = u.id AND r.usuario_id =? ORDER BY id DESC',(err,rows)=>{
 
     // SELECT r.id, r.titulo, r.categoria, r.relato, r.fecha, u.usuario, FROM relatos r, usuarios u WHERE r.usuario_id = u.id AND r.usuario_id = ? ORDER BY id DESC
 
