@@ -12,12 +12,13 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 let apiRouter = require('./routes/api');
 
-app.use(cors(corsOptions))
+app.use(cors())
 
 var app = express();
 
 const corsOptions ={
-  origin:'http://becomeawriter.org',
+  method: ['POST', 'GET', 'SET'],
+  origin:'*',
   optionsSuccessStatus: 200
 }
 
