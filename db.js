@@ -14,10 +14,9 @@ exports.connect = (done) => {
    pool = mysql.createPool({
 
       host: 'eu-cdbr-west-02.cleardb.net',
-      user: 'b9c9457871ff97',
-      password: '010520ba',
-      database: 'heroku_cf0534b434c52eb'
-
+      user: 'ba29a8b5d08178',
+      password: 'fbee648d',
+      database: 'heroku_2f0358899af0ed5'
    })
    done()
 
@@ -36,11 +35,12 @@ exports.get = () => {
       // database:  'heroku_9ce11891757ecf7'
  * 
  * 
+ * mysql://b9c9457871ff97:010520ba@eu-cdbr-west-02.cleardb.net/heroku_cf0534b434c52eb?reconnect=true
  * NUEVA!   https://becomeawriter.herokuapp.com/
- *   host: 'eu-cdbr-west-02.cleardb.net',
- * user: 'b9c9457871ff97',
- * password: '010520ba',
- * database: 'heroku_cf0534b434c52eb'
+ *   host: eu-cdbr-west-02.cleardb.net
+ * user: b9c9457871ff97
+ * password: 010520ba
+ * database: heroku_cf0534b434c52eb
  * 
  * 
  *      // host: 'localhost',
@@ -49,6 +49,16 @@ exports.get = () => {
       // database: 'becomeawriter', //SCHEMA
       // port: '8889',
       // multipleStatements: true
+
+
+//La dase de datos Migrating an existing database to ClearDB de Heroku, la segunda.
+mysql://ba29a8b5d08178:fbee648d@eu-cdbr-west-02.cleardb.net/heroku_2f0358899af0ed5?reconnect=true
+
+ * host: eu-cdbr-west-02.cleardb.net
+ * user: ba29a8b5d08178
+ * password: fbee648d
+ * database: heroku_2f0358899af0ed5
+
  * 
  * 
  * 
