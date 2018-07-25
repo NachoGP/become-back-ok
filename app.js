@@ -1,4 +1,5 @@
 var createError = require('http-errors');
+var cors = require('cors')
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -24,7 +25,6 @@ app.engine('.hbs', exphbs({
   partialDir: __dirname + '/views/partials'
 
 }))
-
 
 
 app.set('view engine', '.hbs');
