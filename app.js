@@ -19,6 +19,7 @@ var app = express();
 const corsOptions ={
   method: ['POST', 'GET', 'SET'],
   origin:'*',
+  credentials: true,
   optionsSuccessStatus: 200
 }
 
