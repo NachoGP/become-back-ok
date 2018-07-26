@@ -13,10 +13,14 @@ exports.connect = (done) => {
 
    pool = mysql.createPool({
 
-      host: 'ec2-54-228-251-254.eu-west-1.compute.amazonaws.com',
-      user: 'ubxvpazkhehuww',
-      password: '4a4c21973b7fcdc5024df849b0198a7fefe49eafab8ea3c48807f93874f98835',
-      database: 'd8gpqcsdrrd80c'
+
+       host: 'eu-cdbr-west-02.cleardb.net',
+       user: 'ba29a8b5d08178',
+       password: 'fbee648d',
+       database: 'heroku_2f0358899af0ed5'
+
+
+
    })
    done()
 
@@ -54,10 +58,10 @@ exports.get = () => {
 //La dase de datos Migrating an existing database to ClearDB de Heroku, la segunda.
 mysql://ba29a8b5d08178:fbee648d@eu-cdbr-west-02.cleardb.net/heroku_2f0358899af0ed5?reconnect=true
 
- * host: eu-cdbr-west-02.cleardb.net
- * user: ba29a8b5d08178
- * password: fbee648d
- * database: heroku_2f0358899af0ed5
+       host: 'eu-cdbr-west-02.cleardb.net',
+       user: 'ba29a8b5d08178',
+       password: 'fbee648d',
+       database: 'heroku_2f0358899af0ed5'
 
  * 
  * 
