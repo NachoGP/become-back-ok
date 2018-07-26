@@ -60,3 +60,7 @@ exports.get = () => {
 // user: 'ubxvpazkhehuww',
 // password: '4a4c21973b7fcdc5024df849b0198a7fefe49eafab8ea3c48807f93874f98835',
 // database: 'd8gpqcsdrrd80c'
+
+
+
+//https://git.heroku.com/becomeawriter.git
