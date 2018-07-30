@@ -14,9 +14,9 @@ exports.connect = (done) => {
    pool = mysql.createPool({
 
        host: 'eu-cdbr-west-02.cleardb.net',
-       user: 'b9c9457871ff97',
-       password: '010520ba',
-       database: 'heroku_cf0534b434c52eb'
+       user: 'bc33e1bf8619d1',
+       password: 'fb4809af',
+       database: 'heroku_aef5356e7008128'
 
    })
    done()
