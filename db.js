@@ -14,9 +14,9 @@ exports.connect = (done) => {
    pool = mysql.createPool({
 
        host: 'eu-cdbr-west-02.cleardb.net',
-       user: 'bb1a389a97efc82',
-       password: '923f4a71',
-       database: 'heroku_619f90e99c56a7c'
+       user: 'b589ce25bd9a46',
+       password: '4c026135',
+       database: 'heroku_ad1a88c61755c1d'
 
    })
    done()
@@ -32,6 +32,10 @@ exports.get = () => {
 //mysql://b1a389a97efc82:923f4a71@eu-cdbr-west-02.cleardb.net/heroku_619f90e99c56a7c?reconnect=true
 
 
+//Actual: con becomeok:
+//mysql://b589ce25bd9a46:4c026135@eu-cdbr-west-02.cleardb.net/heroku_ad1a88c61755c1d?reconnect=true
+
+
 //  * NUEVA!   https://becomeawriter.herokuapp.com/
 //  *   host: 'eu-cdbr-west-02.cleardb.net',
 //  * user: 'b9c9457871ff97',
@@ -39,7 +43,7 @@ exports.get = () => {
 //  * database: 'heroku_cf0534b434c52eb'
 //  * 
 //  * La Local mia: 
- *      // host: 'localhost',
+      // host: 'localhost',
       // user: 'root',
       // password: 'root',
       // database: 'becomeawriter', //SCHEMA
