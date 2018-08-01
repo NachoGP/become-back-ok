@@ -104,7 +104,7 @@ router.post('/usuario/loginkids', (req, res) => {
 
 //Ruta 1: 
 //http://localhost:3000/api/usuario/index
-
+//https://beco-me.herokuapp.com/api/usuario/index
 router.get('/usuario/index', (req, res) => {
 
 	modelUsuario.index((err, rows) => {
