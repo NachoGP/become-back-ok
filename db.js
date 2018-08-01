@@ -14,9 +14,9 @@ exports.connect = (done) => {
    pool = mysql.createPool({
 
        host: 'eu-cdbr-west-02.cleardb.net',
-       user: 'bc33e1bf8619d1',
-       password: 'fb4809af',
-       database: 'heroku_aef5356e7008128'
+       user: 'bb1a389a97efc82',
+       password: '923f4a71',
+       database: 'heroku_619f90e99c56a7c'
 
    })
    done()
@@ -26,6 +26,11 @@ exports.connect = (done) => {
 exports.get = () => {
    return pool
 }
+
+//nueva revisada con M.G. para bawriter2: 
+
+//mysql://b1a389a97efc82:923f4a71@eu-cdbr-west-02.cleardb.net/heroku_619f90e99c56a7c?reconnect=true
+
 
 // EJEMPLO
 //mysql://bed9bcd6c6ce65:2b658634@eu-cdbr-west-02.cleardb.net/heroku_9ce11891757ecf7?reconnect=true
@@ -57,6 +62,16 @@ exports.get = () => {
 // user: 'ubxvpazkhehuww',
 // password: '4a4c21973b7fcdc5024df849b0198a7fefe49eafab8ea3c48807f93874f98835',
 // database: 'd8gpqcsdrrd80c'
+
+
+//la que pasamos de prueba con M. a bawriter: 
+
+       host: 'eu-cdbr-west-02.cleardb.net',
+       user: 'bc33e1bf8619d1',
+       password: 'fb4809af',
+       database: 'heroku_aef5356e7008128'
+
+
 
 
 
