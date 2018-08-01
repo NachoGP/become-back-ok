@@ -32,23 +32,13 @@ exports.get = () => {
 //mysql://b1a389a97efc82:923f4a71@eu-cdbr-west-02.cleardb.net/heroku_619f90e99c56a7c?reconnect=true
 
 
-// EJEMPLO
-//mysql://bed9bcd6c6ce65:2b658634@eu-cdbr-west-02.cleardb.net/heroku_9ce11891757ecf7?reconnect=true
-/**
- *       // host: 'eu-cdbr-west-02.cleardb.net',
-      // user: 'bed9bcd6c6ce65',
-      // password: '2b658634',
-      // database:  'heroku_9ce11891757ecf7'
- * 
- * 
- * mysql://b9c9457871ff97:010520ba@eu-cdbr-west-02.cleardb.net/heroku_cf0534b434c52eb?reconnect=true
- * NUEVA!   https://becomeawriter.herokuapp.com/
- *   host: 'eu-cdbr-west-02.cleardb.net',
- * user: 'b9c9457871ff97',
- * password: '010520ba',
- * database: 'heroku_cf0534b434c52eb'
- * 
- * La Local mia: 
+//  * NUEVA!   https://becomeawriter.herokuapp.com/
+//  *   host: 'eu-cdbr-west-02.cleardb.net',
+//  * user: 'b9c9457871ff97',
+//  * password: '010520ba',
+//  * database: 'heroku_cf0534b434c52eb'
+//  * 
+//  * La Local mia: 
  *      // host: 'localhost',
       // user: 'root',
       // password: 'root',
@@ -56,23 +46,13 @@ exports.get = () => {
       // port: '8889',
       // multipleStatements: true
 
-//postgres://ubxvpazkhehuww:4a4c21973b7fcdc5024df849b0198a7fefe49eafab8ea3c48807f93874f98835@ec2-54-228-251-254.eu-west-1.compute.amazonaws.com:5432/d8gpqcsdrrd80c
-
-// host: 'ec2-54-228-251-254.eu-west-1.compute.amazonaws.com',
-// user: 'ubxvpazkhehuww',
-// password: '4a4c21973b7fcdc5024df849b0198a7fefe49eafab8ea3c48807f93874f98835',
-// database: 'd8gpqcsdrrd80c'
-
 
 //la que pasamos de prueba con M. a bawriter: 
 
-       host: 'eu-cdbr-west-02.cleardb.net',
-       user: 'bc33e1bf8619d1',
-       password: 'fb4809af',
-       database: 'heroku_aef5356e7008128'
-
-
-
+    //    host: 'eu-cdbr-west-02.cleardb.net',
+    //    user: 'bc33e1bf8619d1',
+    //    password: 'fb4809af',
+    //    database: 'heroku_aef5356e7008128'
 
 
 //https://git.heroku.com/becomeawriter.git
