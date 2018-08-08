@@ -188,7 +188,7 @@ exports.nTotalrelatoscat5 = (done)=>{
 //Nº total de relatos de categoria 5 min en Kids
 exports.nTotalrelatoscat5Kids = (done)=>{
 
-  db.get().query("SELECT COUNT(*) as total FROM becomeawriter.relatoskids WHERE categoria=5",(err,rows)=>{
+  db.get().query("SELECT COUNT(*) as totalcincomin FROM becomeawriter.relatoskids WHERE categoria=5",(err,rows)=>{
 
      if(err) return done(err, null)
      done(null, rows)
