@@ -14,9 +14,9 @@ exports.connect = (done) => {
    pool = mysql.createPool({
 
     host: 'eu-cdbr-west-02.cleardb.net',
-    user: 'bc33e1bf8619d1',
-    password: 'fb4809af',
-    database: 'heroku_aef5356e7008128'
+    user: 'bcd63676642bea',
+    password: '81310650',
+    database: 'heroku_c1a2804237e8af0'
 
    })
    done()
@@ -27,6 +27,7 @@ exports.get = () => {
    return pool
 }
 
+//mysql://bcd63676642bea:81310650@eu-cdbr-west-02.cleardb.net/heroku_c1a2804237e8af0?reconnect=true
 
 //  * NUEVA!   https://becomeawriter.herokuapp.com/
 //  *   host: 'eu-cdbr-west-02.cleardb.net',
