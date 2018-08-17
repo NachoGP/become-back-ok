@@ -29,13 +29,7 @@ exports.get = () => {
 
 //mysql://bcd63676642bea:81310650@eu-cdbr-west-02.cleardb.net/heroku_c1a2804237e8af0?reconnect=true
 
-//  * NUEVA!   https://becomeawriter.herokuapp.com/
-//  *   host: 'eu-cdbr-west-02.cleardb.net',
-//  * user: 'b9c9457871ff97',
-//  * password: '010520ba',
-//  * database: 'heroku_cf0534b434c52eb'
-//  * 
-//  * La Local mia: 
+//  * Local: 
       // host: 'localhost',
       // user: 'root',
       // password: 'root',
@@ -43,16 +37,5 @@ exports.get = () => {
       // port: '8889',
       // multipleStatements: true
 
-
-//mysql://bc33e1bf8619d1:fb4809af@eu-cdbr-west-02.cleardb.net/heroku_aef5356e7008128?reconnect=true
-//la que pasamos de prueba con M. a bawriter: 
-
-    //    host: 'eu-cdbr-west-02.cleardb.net',
-    //    user: 'bc33e1bf8619d1',
-    //    password: 'fb4809af',
-    //    database: 'heroku_aef5356e7008128'
-
-
-//https://git.heroku.com/becomeawriter.git
 
 //https://beco-me.herokuapp.com/
