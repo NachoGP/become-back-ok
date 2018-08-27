@@ -12,11 +12,10 @@ let pool = null
 exports.connect = (done) => {
 
    pool = mysql.createPool({
-
-    host: 'eu-cdbr-west-02.cleardb.net',
-    user: 'bcd63676642bea',
-    password: '81310650',
-    database: 'heroku_c1a2804237e8af0'
+    host: 'eeu-cdbr-west-02.cleardb.net',
+    user: 'b4e20df1d3d4a4',
+    password: '6c19876a',
+    database: 'heroku_492ee879f51fed6'
 
    })
    done()
@@ -26,16 +25,4 @@ exports.connect = (done) => {
 exports.get = () => {
    return pool
 }
-
-//mysql://bcd63676642bea:81310650@eu-cdbr-west-02.cleardb.net/heroku_c1a2804237e8af0?reconnect=true
-
-//  * Local: 
-      // host: 'localhost',
-      // user: 'root',
-      // password: 'root',
-      // database: 'becomeawriter', //SCHEMA
-      // port: '8889',
-      // multipleStatements: true
-
-
-//https://beco-me.herokuapp.com/
+//https://becomewriter.herokuapp.com/
